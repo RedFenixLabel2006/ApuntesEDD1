@@ -46,6 +46,7 @@ public class Binario_Hexadecimal {
         masc = ~(((1 << longi )-1)<<16); // la máscara se modifica para que todos los bits que se quieren modificar sean 1 y luego saca el complemento esto para luego limpiar
         this.f = (f & masc) | a << inicio; //Limpia el día antiguo, Inserta el nuevo día
     }
+
     public void setMes(int a ){
         int inicio = 12;
         int longi = 4;
