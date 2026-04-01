@@ -36,6 +36,7 @@ public class Binario_Hexadecimal {
         return  (va >> 26) & ((1 << 6) -1);
     }
 
+
     public void setDia(int a){
         int inicio = 16; // posición del dia en el int
         int longi = 5; // longitud que tiene en bits el dia
