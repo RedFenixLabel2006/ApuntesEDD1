@@ -13,7 +13,6 @@ public class Binario_Hexadecimal {
         this.f = agno | mes <<12 |dia << 16 | hora << 21 | minutos << 26;
     }
 
-
     public int getDia(){
         int va = this.f;
         // los get hacen un desplazamiento de 16 bits para que los datos que importan estén al final, luego se crea una máscara de 4 bits y esta se compara compare
