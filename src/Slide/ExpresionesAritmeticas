@@ -1,0 +1,17 @@
+1. Infija (la normal)
+El operador va entre los dos operandos. Es como escribimos siempre:
+A + B * C + D
+Como la escribimos normalmente. Necesita reglas de precedencia (× antes que +).
+
+
+2. Prefija
+El operador va antes de los operandos:
++ + A * B C D
+El operador "anuncia" lo que viene. Se lee de derecha a izquierda.
+
+
+3. Postfija
+El operador va después de los operandos:
+A B C * + D +
+
+Ideal para computadores. Se evalúa con una pila, sin precedencia.
