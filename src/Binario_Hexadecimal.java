@@ -17,6 +17,8 @@ public class Binario_Hexadecimal {
         int va = this.f;
         // los get hacen un desplazamiento de 16 bits para que los datos que importan estén al final, luego se crea una máscara de 4 bits y esta se compara compare
         // con un & para que retorne los valores que importan
+        //1 << 4  =  0001 0000  (16 en decimal)
+        //-1  =  0000 1111  (15 en decimal)
         return  (va >> 16) & ((1 << 5) -1);
     }
     public int getMes(){
