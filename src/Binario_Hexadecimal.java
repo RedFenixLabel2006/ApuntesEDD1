@@ -17,7 +17,7 @@ public class Binario_Hexadecimal {
         int va = this.f;
         // los get hacen un desplazamiento de 16 bits para que los datos que importan estén al final, luego se crea una máscara de 4 bits y esta se compara compare
         // con un & para que retorne los valores que importan
-        //1 << 4  =  0001 0000  (16 en decimal)
+        //1 << 5  =  0001 0000  (16 en decimal)
         //-1  =  0000 1111  (15 en decimal)
         return  (va >> 16) & ((1 << 5) -1);
     }
@@ -47,6 +47,8 @@ public class Binario_Hexadecimal {
 
         masc = ~(((1 << longi )-1)<<16); // la máscara se modifica para que todos los bits que se quieren modificar sean 1 y luego saca el complemento esto para luego limpiar
         this.f = (f & masc) | a << inicio; //Limpia el día antiguo, Inserta el nuevo día
+
+
     }
 
     public void setMes(int a ){
@@ -57,6 +59,9 @@ public class Binario_Hexadecimal {
 
         masc = ~(((1 << longi )-1)<<12);
         this.f = (f & masc) | a << inicio;
+        //(1 << longi) - 1  →  (1 << 4) - 1  =  0b00001111  =  0xF
+        //((1 << longi) - 1) << 12  →  0xF << 12  =  0b1111_000000000000
+        //masc = ~(0b1111_000000000000) =   0b...0000_111111111111
     }
     public void setAgno( int a){
         int inicio = 0;
