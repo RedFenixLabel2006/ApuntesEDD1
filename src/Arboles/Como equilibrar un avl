@@ -1,0 +1,10 @@
+
+
+FE nodo | FE hijo | Caso        | Rotación
+--------|---------|-------------|------------------
+  +2    |   +1    | LL (izq-izq)| Simple derecha
+  +2    |   -1    | LR (izq-der)| Doble izq-der
+  -2    |   -1    | RR (der-der)| Simple izquierda
+  -2    |   +1    | RL (der-izq)| Doble der-izq
+
+Regla: signos iguales = simple | signos distintos = doble
