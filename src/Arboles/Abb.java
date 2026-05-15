@@ -1,5 +1,8 @@
 package Arboles;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Abb {
     private NodoAbb laRaiz;
     Abb(){ laRaiz = null; } // árbol vacío al inicio
@@ -92,4 +95,22 @@ public class Abb {
         return n.elemento; // el nodo sin hijo derecho es el máximo
     }
 
+
+
+    // mismo codigo para avl
+    public void recorridoPorNivel() {
+        if (laRaiz == null) return;
+
+        Queue<NodoAbb> cola = new LinkedList<>();
+        cola.add(laRaiz);
+
+        while (!cola.isEmpty()) {
+            NodoAbb actual = cola.poll();
+            System.out.print(actual.elemento + " ");
+
+            if (actual.lchild != null) cola.add(actual.lchild);
+            if (actual.rchild != null) cola.add(actual.rchild);
+        }
+        System.out.println();
+    }
 }

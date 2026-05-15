@@ -18,14 +18,23 @@ class ArbolG {
     private NodoArbol root;
     public ArbolG() { root = null; }
 
-    // ── 1. Postorder ──────────────────────────────────────────
-    void Postorder() { postorder(root); System.out.println(); }
-
-    private void postorder(NodoArbol nodo) {
+    // Post-orden: primero todos los hijos, luego el nodo actual
+    public void postOrden(NodoArbol nodo) {
         if (nodo == null) return;
-        postorder(nodo.hijo);
+
+        // 1. Recorrer todos los hijos en post-orden
+        NodoArbol hijo = nodo.hijo;
+        while (hijo != null) {
+            postOrden(hijo);
+            hijo = hijo.hermano;
+        }
+
+        // 2. Visitar el nodo actual (después de sus hijos)
         System.out.print(nodo.nombre + " ");
-        postorder(nodo.hermano);
+    }
+
+    public void postOrden() {
+        postOrden(root);
     }
 
     // ── 2. Size ───────────────────────────────────────────────
@@ -89,7 +98,7 @@ class ArbolG {
         NodoArbol g = t.new NodoArbol("g", null, null);
         c.hijo.hermano.hermano = g; // g es tercer hijo de c
 
-        System.out.print("Postorder: ");    t.Postorder();
+        System.out.print("Postorder: ");    t.postOrden();
         System.out.println("Size: "         + t.Size());
         System.out.print("Por nivel: ");    t.recorridoPornivel();
     }
